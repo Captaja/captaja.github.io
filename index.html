@@ -395,99 +395,6 @@
             color: var(--primary);
         }
 
-        /* Empresas em Destaque */
-        .featured-companies {
-            padding: 100px 0;
-            background-color: var(--light-bg);
-        }
-
-        /* Startups em Destaque */
-        .featured-startups {
-            padding: 100px 0;
-            background-color: var(--white);
-        }
-
-        .companies-grid, .startups-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .company-card, .startup-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px var(--shadow);
-            transition: transform 0.3s;
-        }
-
-        .company-card:hover, .startup-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .company-image, .startup-image {
-            height: 180px;
-            background-color: var(--secondary);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .company-image img, .startup-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .company-info, .startup-info {
-            padding: 20px;
-        }
-
-        .company-info h3, .startup-info h3 {
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .company-sector, .startup-sector {
-            color: var(--secondary);
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .company-percentage {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        .startup-pitch {
-            font-size: 14px;
-            color: var(--secondary);
-            margin-bottom: 20px;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .btn-outline {
-            display: block;
-            text-align: center;
-            padding: 10px;
-            border: 2px solid var(--accent);
-            color: var(--accent);
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .btn-outline:hover {
-            background-color: var(--accent);
-            color: var(--white);
-        }
-
         /* Para Investidores */
         .investors, .companies {
             padding: 100px 0;
@@ -667,10 +574,6 @@
                 margin: 15px 0;
             }
 
-            .companies-grid, .startups-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-
             .navbar {
                 justify-content: space-between;
                 align-items: center;
@@ -716,8 +619,6 @@
                 <ul class="nav-menu" id="nav-menu">
                     <li><a href="#" aria-label="Início">Início</a></li>
                     <li><a href="#como-funciona" aria-label="Como Funciona">Como Funciona</a></li>
-                    <li><a href="#empresas" aria-label="Encontre Empresas">Encontre Empresas</a></li>
-                    <li><a href="#startups" aria-label="Encontre Startups">Encontre Startups</a></li>
                     <li><a href="#investidor" class="tooltip" aria-label="Sou Investidor">
                         Sou Investidor
                         <span class="tooltip-text">Conheça nossas oportunidades exclusivas para investidores</span>
@@ -726,7 +627,6 @@
                         Sou Empresa
                         <span class="tooltip-text">Descubra como vender sua empresa ou captar investimentos</span>
                     </a></li>
-                    <li><a href="#" id="login-btn" aria-label="Login">Login</a></li>
                     <li><a href="#" id="registro-btn" class="btn-sm" aria-label="Cadastre-se">Cadastre-se</a></li>
                 </ul>
                 <div class="hamburger" id="hamburger" role="button" aria-label="Toggle Menu">
@@ -737,28 +637,6 @@
             </nav>
         </div>
     </header>
-
-    <!-- Modal de Login -->
-    <div class="modal" id="login-modal" role="dialog" aria-labelledby="login-title">
-        <div class="modal-content">
-            <span class="close-modal" aria-label="Fechar Modal">×</span>
-            <h2 class="modal-title" id="login-title">Login</h2>
-            <form class="modal-form" aria-label="Formulário de Login">
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" placeholder="Seu e-mail" required aria-required="true">
-                </div>
-                <div class="form-group">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" placeholder="Sua senha" required aria-required="true">
-                </div>
-                <button type="submit" class="btn">Entrar</button>
-                <p style="margin-top: 15px; text-align: center;">
-                    <a href="#" style="color: var(--accent);" aria-label="Recuperar Senha">Esqueceu sua senha?</a>
-                </p>
-            </form>
-        </div>
-    </div>
 
     <!-- Modal de Cadastro -->
     <div class="modal" id="registro-modal" role="dialog" aria-labelledby="registro-title">
@@ -779,49 +657,10 @@
                     <select id="perfil" required aria-required="true">
                         <option value="" disabled selected>Selecione...</option>
                         <option value="investidor">Investidor</option>
-                        <option value="empresario">Empresário</option>
+                        <option value="empreendedor">Empreendedor</option>
                     </select>
-                </div>
-                <div class="form-group">
-                    <label for="password-cadastro">Crie uma senha</label>
-                    <input type="password" id="password-cadastro" placeholder="Sua senha" required aria-required="true">
                 </div>
                 <button type="submit" class="btn">Criar conta</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Modal de Cadastro de Startup -->
-    <div class="modal" id="startup-modal" role="dialog" aria-labelledby="startup-title">
-        <div class="modal-content">
-            <span class="close-modal" aria-label="Fechar Modal">×</span>
-            <h2 class="modal-title" id="startup-title">Cadastrar Startup</h2>
-            <form class="modal-form" aria-label="Formulário de Cadastro de Startup">
-                <div class="form-group">
-                    <label for="startup-nome">Nome da Startup</label>
-                    <input type="text" id="startup-nome" placeholder="Nome da sua startup" required aria-required="true">
-                </div>
-                <div class="form-group">
-                    <label for="startup-setor">Setor</label>
-                    <select id="startup-setor" required aria-required="true">
-                        <option value="" disabled selected>Selecione...</option>
-                        <option value="tecnologia">Tecnologia</option>
-                        <option value="saude">Saúde</option>
-                        <option value="educacao">Educação</option>
-                        <option value="sustentabilidade">Sustentabilidade</option>
-                        <option value="financas">Finanças</option>
-                        <option value="outro">Outro</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="startup-pitch">Pitch da Ideia</label>
-                    <textarea id="startup-pitch" placeholder="Descreva sua ideia em até 200 caracteres" maxlength="200" required aria-required="true"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="startup-imagem">Imagem da Startup</label>
-                    <input type="file" id="startup-imagem" accept="image/*" required aria-required="true">
-                </div>
-                <button type="submit" class="btn">Cadastrar Startup</button>
             </form>
         </div>
     </div>
@@ -859,73 +698,11 @@
         </div>
     </div>
 
-    <!-- Modal de Detalhes da Empresa -->
-    <div class="modal" id="empresa-detalhes-modal" role="dialog" aria-labelledby="empresa-title">
-        <div class="modal-content">
-            <span class="close-modal" aria-label="Fechar Modal">×</span>
-            <h2 class="modal-title" id="empresa-title">Tech Solutions</h2>
-            <div class="empresa-detalhes">
-                <div class="empresa-header" style="display: flex; align-items: center; margin-bottom: 20px;">
-                    <img src="/api/placeholder/80/80" alt="Logo Tech Solutions" style="margin-right: 15px; border-radius: 5px;">
-                    <div>
-                        <div style="font-weight: bold; color: var(--accent); font-size: 18px;">Tecnologia / SaaS</div>
-                        <div style="font-weight: bold; font-size: 22px;">30% à venda</div>
-                    </div>
-                </div>
-                <div class="empresa-info">
-                    <h3>Sobre a empresa</h3>
-                    <p>A Tech Solutions é uma empresa de tecnologia fundada em 2020, especializada em desenvolvimento de softwares SaaS para gestão empresarial. Atualmente conta com mais de 200 clientes ativos e um faturamento mensal recorrente.</p>
-                    
-                    <h3 style="margin-top: 20px;">Números</h3>
-                    <ul style="list-style: none; padding: 10px 0;">
-                        <li style="margin-bottom: 10px;"><strong>Faturamento Anual:</strong> R$ 2,4 milhões</li>
-                        <li style="margin-bottom: 10px;"><strong>Lucro Líquido:</strong> R$ 780 mil</li>
-                        <li style="margin-bottom: 10px;"><strong>Clientes Ativos:</strong> 215</li>
-                        <li style="margin-bottom: 10px;"><strong>Churn Rate:</strong> 2.5%</li>
-                        <li><strong>Funcionários:</strong> 18</li>
-                    </ul>
-                    
-                    <h3 style="margin-top: 20px;">Motivo da venda</h3>
-                    <p>Captação de recursos para expansão internacional e ampliação do portfólio de produtos.</p>
-                    
-                    <div style="margin-top: 30px; display: flex; gap: 15px;">
-                        <button class="btn">Solicitar mais informações</button>
-                        <button class="btn-outline">Agendar reunião</button>
-                    </div>
-                </div>  
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de Detalhes da Startup -->
-    <div class="modal" id="startup-detalhes-modal" role="dialog" aria-labelledby="startup-detalhes-title">
-        <div class="modal-content">
-            <span class="close-modal" aria-label="Fechar Modal">×</span>
-            <h2 class="modal-title" id="startup-detalhes-title">Startup Name</h2>
-            <div class="startup-detalhes">
-                <div class="startup-header" style="display: flex; align-items: center; margin-bottom: 20px;">
-                    <img src="/api/placeholder/80/80" alt="Logo Startup" style="margin-right: 15px; border-radius: 5px;">
-                    <div>
-                        <div style="font-weight: bold; color: var(--accent); font-size: 18px;">Setor</div>
-                    </div>
-                </div>
-                <div class="startup-info">
-                    <h3>Pitch da Ideia</h3>
-                    <p>Descrição do pitch da startup, destacando a proposta de valor e o potencial de mercado.</p>
-                    <div style="margin-top: 30px; display: flex; gap: 15px;">
-                        <button class="btn">Solicitar mais informações</button>
-                        <button class="btn-outline">Agendar reunião</button>
-                    </div>
-                </div>  
-            </div>
-        </div>
-    </div>
-
     <!-- Hero -->
     <section class="hero" aria-labelledby="hero-title">
         <div class="container">
             <div class="hero-content">
-                <h1 id="hero-title">Invista no futuro com segurança</h1>
+                <h1 id="hero-title">Invista com rapidez sem contatar os donos da empresa</h1>
                 <div class="slogan">Capte seu futuro — invista em inovação</div>
                 <p>Conecte-se com empresas à venda e oportunidades exclusivas</p>
                 <a href="#" class="btn" id="comece-agora-btn" aria-label="Comece Agora">Comece Agora</a>
@@ -938,7 +715,7 @@
         <div class="container">
             <div class="section-title">
                 <h2 id="how-it-works-title">Como Funciona</h2>
-                <p>Conheça os passos para investir com segurança na Captaja</p>
+                <p>Conheça os passos para investir com rapidez sem contatar os donos da empresa na Captaja</p>
             </div>
             <div class="steps">
                 <div class="step">
@@ -953,110 +730,8 @@
                 </div>
                 <div class="step">
                     <div class="step-icon">3</div>
-                    <h3>Invista com segurança</h3>
-                    <p>Contate diretamente os empresários, negocie condições e finalize sua participação com toda a segurança.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Empresas em Destaque -->
-    <section class="featured-companies" id="empresas" aria-labelledby="empresas-title">
-        <div class="container">
-            <div class="section-title">
-                <h2 id="empresas-title">Empresas em Destaque</h2>
-                <p>Oportunidades selecionadas e verificadas pela nossa equipe</p>
-            </div>
-            <div class="companies-grid">
-                <div class="company-card">
-                    <div class="company-image">
-                        <img src="/api/placeholder/400/320" alt="Tech Solutions">
-                    </div>
-                    <div class="company-info">
-                        <h3>Tech Solutions</h3>
-                        <div class="company-sector">Tecnologia / SaaS</div>
-                        <div class="company-percentage">30% à venda</div>
-                        <a href="#" class="btn-outline" aria-label="Ver detalhes da Tech Solutions">Ver detalhes</a>
-                    </div>
-                </div>
-                <div class="company-card">
-                    <div class="company-image">
-                        <img src="/api/placeholder/400/320" alt="Green Energy">
-                    </div>
-                    <div class="company-info">
-                        <h3>Green Energy</h3>
-                        <div class="company-sector">Energia Sustentável</div>
-                        <div class="company-percentage">45% à venda</div>
-                        <a href="#" class="btn-outline" aria-label="Ver detalhes da Green Energy">Ver detalhes</a>
-                    </div>
-                </div>
-                <div class="company-card">
-                    <div class="company-image">
-                        <img src="/api/placeholder/400/320" alt="Agro Invest">
-                    </div>
-                    <div class="company-info">
-                        <h3>Agro Invest</h3>
-                        <div class="company-sector">Agronegócio</div>
-                        <div class="company-percentage">100% à venda</div>
-                        <a href="#" class="btn-outline" aria-label="Ver detalhes da Agro Invest">Ver detalhes</a>
-                    </div>
-                </div>
-                <div class="company-card">
-                    <div class="company-image">
-                        <img src="/api/placeholder/400/320" alt="Urban Logistics">
-                    </div>
-                    <div class="company-info">
-                        <h3>Urban Logistics</h3>
-                        <div class="company-sector">Logística</div>
-                        <div class="company-percentage">25% à venda</div>
-                        <a href="#" class="btn-outline" aria-label="Ver detalhes da Urban Logistics">Ver detalhes</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Startups em Destaque -->
-    <section class="featured-startups" id="startups" aria-labelledby="startups-title">
-        <div class="container">
-            <div class="section-title">
-                <h2 id="startups-title">Startups em Destaque</h2>
-                <p>Conheça ideias inovadoras em busca de investimento</p>
-                <a href="#" id="cadastrar-startup-btn" class="btn" style="margin-top: 20px;" aria-label="Cadastrar Sua Startup">Cadastrar Sua Startup</a>
-            </div>
-            <div class="startups-grid">
-                <div class="startup-card">
-                    <div class="startup-image">
-                        <img src="/api/placeholder/400/320" alt="Innovate Tech">
-                    </div>
-                    <div class="startup-info">
-                        <h3>Innovate Tech</h3>
-                        <div class="startup-sector">Tecnologia</div>
-                        <div class="startup-pitch">Plataforma de IA para otimização de processos industriais, reduzizando custos em até 30%.</div>
-                        <a href="#" class="btn-outline" aria-label="Ver detalhes da Innovate Tech">Ver detalhes</a>
-                    </div>
-                </div>
-                <div class="startup-card">
-                    <div class="startup-image">
-                        <img src="/api/placeholder/400/320" alt="HealthTrack">
-                    </div>
-                    <div class="startup-info">
-                        <h3>HealthTrack</h3>
-                        <div class="startup-sector">Saúde</div>
-                        <div class="startup-pitch">Aplicativo de monitoramento de saúde com IA para prevenção de doenças crônicas.</div>
-                        <a href="#" class="btn-outline" aria-label="Ver detalhes da HealthTrack">Ver detalhes</a>
-                    </div>
-                </div>
-                <div class="startup-card">
-                    <div class="startup-image">
-                        <img src="/api/placeholder/400/320" alt="EcoSolutions">
-                    </div>
-                    <div class="startup-info">
-                        <h3>EcoSolutions</h3>
-                        <div class="startup-sector">Sustentabilidade</div>
-                        <div class="startup-pitch">Soluções de reciclagem inovadoras para reduzir o desperdício em 50%.</div>
-                        <a href="#" class="btn-outline" aria-label="Ver detalhes da EcoSolutions">Ver detalhes</a>
-                    </div>
+                    <h3>Invista com rapidez</h3>
+                    <p>Finalize sua participação sem contatar diretamente os donos da empresa, com eficiência e segurança.</p>
                 </div>
             </div>
         </div>
@@ -1068,6 +743,7 @@
             <div class="section-title">
                 <h2 id="investidor-title">Para Investidores</h2>
                 <p>Por que escolher a Captaja para seus investimentos</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeOjNgUWFjyU-d0LFfQR6wHyIax7Vjwz5jOLGMhkQoGPce64Q/viewform" target="_blank" class="btn" style="margin-top: 20px;" aria-label="Formulário para Investidores">Preencha o formulário de investidor</a>
             </div>
             <div class="benefits">
                 <div class="benefit">
@@ -1161,8 +837,6 @@
                     <ul class="footer-links">
                         <li><a href="#" aria-label="Início">Início</a></li>
                         <li><a href="#como-funciona" aria-label="Como Funciona">Como Funciona</a></li>
-                        <li><a href="#empresas" aria-label="Encontre Empresas">Empresas</a></li>
-                        <li><a href="#startups" aria-label="Encontre Startups">Startups</a></li>
                         <li><a href="#investidor" aria-label="Para Investidores">Para Investidores</a></li>
                         <li><a href="#empresa" aria-label="Para Empresas">Para Empresas</a></li>
                         <li><a href="#" id="footer-contato-btn" aria-label="Contato">Contato</a></li>
@@ -1195,9 +869,7 @@
         // Modal Handling
         const modals = document.querySelectorAll('.modal');
         const openModalButtons = {
-            'login-btn': 'login-modal',
             'registro-btn': 'registro-modal',
-            'cadastrar-startup-btn': 'startup-modal',
             'footer-contato-btn': 'contato-modal',
             'comece-agora-btn': 'registro-modal'
         };
@@ -1236,24 +908,6 @@
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
-            });
-        });
-
-        // Open company details modal when clicking "Ver detalhes"
-        document.querySelectorAll('.company-card .btn-outline').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const modal = document.getElementById('empresa-detalhes-modal');
-                modal.style.display = 'flex';
-            });
-        });
-
-        // Open startup details modal when clicking "Ver detalhes"
-        document.querySelectorAll('.startup-card .btn-outline').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const modal = document.getElementById('startup-detalhes-modal');
-                modal.style.display = 'flex';
             });
         });
     </script>
